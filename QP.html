@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Eshwar College of Engineering</title>
+    <!-- Use Tailwind CSS for responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #269a9b; /* Teal background from the images */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+        .card {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#269a9b] text-white font-sans">
+
+    <!-- Main container for the whole application -->
+    <div class="container mx-auto p-8 flex flex-col items-center">
+
+        <!-- Top Header with College Name and Logo -->
+        <header class="w-full flex items-center justify-center p-4">
+            <!-- College Logo and Name -->
+            <div class="flex items-center space-x-2">
+                <!-- SVG logo to match the image, with a placeholder for the actual logo image -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 text-white">
+                    <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8z"/>
+                    <path d="M12 7.75a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5a.75.75 0 01.75-.75zM12 15a1 1 0 101-1 1 1 0 00-1 1z"/>
+                </svg>
+                <h1 class="text-3xl font-bold text-gray-800">Sri Eshwar College of Engineering</h1>
+            </div>
+        </header>
+
+        <!-- Main content area -->
+        <main class="w-full mt-8">
+
+            <!-- Dashboard Page (Initially visible) -->
+            <div id="dashboard-page" class="w-full flex flex-col lg:flex-row justify-center items-start lg:space-x-8">
+                <!-- Left-side navigation menu -->
+                <div class="w-full lg:w-1/4 p-4 rounded-lg bg-gray-300 text-gray-800 shadow-xl mb-8 lg:mb-0">
+                    <button onclick="showPage('dashboard-page')" class="w-full p-4 mb-4 rounded-lg bg-gray-400 font-bold text-lg text-left hover:bg-gray-500">Dashboard</button>
+                    <button onclick="showPage('faculty-login-page')" class="w-full p-4 mb-4 rounded-lg bg-gray-400 font-bold text-lg text-left hover:bg-gray-500">Faculty Login</button>
+                    <button onclick="showPage('reviewer-login-page')" class="w-full p-4 rounded-lg bg-gray-400 font-bold text-lg text-left hover:bg-gray-500">Reviewer Login</button>
+                </div>
+                
+                <!-- Right-side content panel -->
+                <div class="w-full lg:w-2/3 p-8 rounded-lg bg-gray-300 text-gray-800 shadow-xl flex flex-col items-center justify-center">
+                    <h2 class="text-3xl font-bold mb-4">Question paper Generation Software</h2>
+                    <p class="text-center">Welcome to the Question Paper Generation Software. Use the navigation to get started.</p>
+                    <!-- Placeholder image matching the layout -->
+                    <img src="https://placehold.co/400x300/a3e635/1a202c?text=Students" alt="Students studying" class="mt-8 rounded-lg shadow-lg">
+                </div>
+            </div>
+
+            <!-- Faculty Login Page (Initially hidden) -->
+            <div id="faculty-login-page" class="hidden w-full flex flex-col items-center">
+                <div class="w-full max-w-lg p-8 rounded-lg bg-gray-300 text-gray-800 shadow-xl">
+                    <h2 class="text-3xl font-bold text-center mb-6">Faculty Login</h2>
+                    <div class="space-y-6">
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <label for="username" class="md:w-1/3 text-lg font-semibold">User Name:</label>
+                            <input type="text" id="username" class="w-full md:w-2/3 p-3 mt-2 md:mt-0 rounded-md bg-gray-200 border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <label for="password" class="md:w-1/3 text-lg font-semibold">Password:</label>
+                            <input type="password" id="password" class="w-full md:w-2/3 p-3 mt-2 md:mt-0 rounded-md bg-gray-200 border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <!-- Login button that redirects to the question paper page upon success -->
+                    <button onclick="showPage('question-paper-page')" class="w-full mt-8 p-3 rounded-md bg-blue-600 text-white font-bold hover:bg-blue-700 transition duration-300">Login</button>
+                    <!-- Back button to return to the dashboard -->
+                    <button onclick="showPage('dashboard-page')" class="w-full mt-4 p-3 rounded-md bg-gray-500 text-white font-bold hover:bg-gray-600 transition duration-300">Back</button>
+                </div>
+            </div>
+
+            <!-- Question Paper Page (Initially hidden) -->
+            <div id="question-paper-page" class="hidden w-full flex flex-col items-center">
+                <header class="w-full flex items-center justify-between p-4 mb-8">
+                    <div class="flex items-center space-x-2">
+                        <!-- College Logo and Name -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 text-white">
+                            <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8z"/>
+                            <path d="M12 7.75a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5a.75.75 0 01.75-.75zM12 15a1 1 0 101-1 1 1 0 00-1 1z"/>
+                        </svg>
+                        <h1 class="text-3xl font-bold text-gray-800">Sri Eshwar College of Engineering</h1>
+                    </div>
+                    <!-- Logout and User icons -->
+                    <div class="flex space-x-4">
+                        <button class="p-2 rounded-full bg-gray-300 text-gray-800 hover:bg-gray-400">
+                            <!-- User Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <button onclick="showPage('dashboard-page')" class="p-2 rounded-full bg-red-500 text-white hover:bg-red-600">
+                            <!-- Logout Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 001 1h5a1 1 0 000-2H4V4h4a1 1 0 100-2H3z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M16.707 9.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L15.414 11H12a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+
+                <div class="w-full max-w-xl p-8 rounded-lg bg-gray-300 text-gray-800 shadow-xl">
+                    <h2 class="text-3xl font-bold mb-6">Question Paper Generation</h2>
+                    <div class="space-y-6">
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <label for="department" class="md:w-1/3 text-lg font-semibold">Department:</label>
+                            <input type="text" id="department" class="w-full md:w-2/3 p-3 mt-2 md:mt-0 rounded-md bg-gray-200 border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <label for="year" class="md:w-1/3 text-lg font-semibold">Year/Sem:</label>
+                            <input type="text" id="year" class="w-full md:w-2/3 p-3 mt-2 md:mt-0 rounded-md bg-gray-200 border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <label for="course" class="md:w-1/3 text-lg font-semibold">Course:</label>
+                            <input type="text" id="course" class="w-full md:w-2/3 p-3 mt-2 md:mt-0 rounded-md bg-gray-200 border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="flex justify-center space-x-4 mt-8">
+                        <button onclick="showPage('dashboard-page')" class="w-32 p-3 rounded-md bg-green-500 text-white font-bold hover:bg-green-600 transition duration-300">Enter</button>
+                        <button onclick="showPage('dashboard-page')" class="w-32 p-3 rounded-md bg-red-500 text-white font-bold hover:bg-red-600 transition duration-300">Back</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full text-center mt-12 p-4 border-t-2 border-white">
+            <p class="text-lg">Owned By : Controller of Examinations, SECE</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Function to show the selected page and hide others
+        function showPage(pageId) {
+            const pages = ['dashboard-page', 'faculty-login-page', 'question-paper-page'];
+            pages.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.classList.add('hidden');
+                }
+            });
+            const currentPage = document.getElementById(pageId);
+            if (currentPage) {
+                currentPage.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
