@@ -1,4 +1,4 @@
-Page 1
+Page 1   Gomathi/Agalya
 
 Question bank/Questions
 
@@ -9,7 +9,7 @@ Create/Modify question
 
 
 
-Page 2
+Page 2  - P Megala, R Megala, Jayapratha
 Generate QP
 
 Subject,
@@ -21,7 +21,7 @@ Reviewer
 List of generated question papers
 
 
-Page 3
+Page 3 - Anitha, Sowmya
 Edit QP
 Add/Modify/Remove questions
 
@@ -29,13 +29,13 @@ View QP
 A table for history of review
 
 
-Page 4
+Page 4 - Praveen, Arun
 
 Reviewer 
 List of question papers pending for review
 List of approved questions
 
-Page 5
+Page 5 - Suganya, Kalaivani
 
 Edit page 
 Add comments for each questions if needed
