@@ -1,0 +1,50 @@
+Page 1   Gomathi/Agalya
+
+Question bank/Questions
+
+Upload the course material 
+Upload question bank
+subject, unit,  topic 
+Create/Modify question
+
+
+
+Page 2  - P Megala, R Megala, Jayapratha
+Generate QP
+
+Subject,
+Exam
+Sem
+Dept
+Reviewer
+
+List of generated question papers
+
+
+Page 3 - Anitha, Sowmya
+Edit QP
+Add/Modify/Remove questions
+
+View QP
+A table for history of review
+
+
+Page 4 - Praveen, Arun
+
+Reviewer 
+List of question papers pending for review
+List of approved questions
+
+Page 5 - Suganya, Kalaivani
+
+Edit page 
+Add comments for each questions if needed
+Approve or resent 
+
+
+View 
+Approved QA
+
+
+
+
